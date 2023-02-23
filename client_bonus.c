@@ -41,16 +41,13 @@ void	received(int sinal, siginfo_t *info, void *other)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	pid_s;
 	struct sigaction	sa;
+	int					i;
+	int					pid_s;
 
 	i = 0;
 	if (argc != 3)
-	{
-		ft_printf("Please, check the input. ");
-		ft_printf("It must contain the PID and one message\n");
-	}
+		return (ft_printf("Please, check the input.\n"));
 	if (argc == 3)
 	{
 		sa.sa_sigaction = &received;

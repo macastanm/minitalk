@@ -35,8 +35,8 @@ void	print_msg(int sinal, siginfo_t *info, void *other)
 
 int	main(int argc, char **argv)
 {
-	int	pid;
-	struct sigaction		sa;
+	struct sigaction	sa;
+	int					pid;
 
 	(void)argv;
 	sa.sa_sigaction = &print_msg;
