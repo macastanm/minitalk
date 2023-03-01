@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 
 	(void)argv;
 	sa.sa_sigaction = &print_msg;
+	sigemptyset(&sa.sa_mask);
 	sa.sa_flags = SA_SIGINFO;
 	if (argc != 1)
 	{

@@ -51,6 +51,7 @@ int	main(int argc, char **argv)
 	if (argc == 3)
 	{
 		sa.sa_sigaction = &received;
+		sigemptyset(&sa.sa_mask);
 		sa.sa_flags = SA_SIGINFO;
 		pid_s = ft_atoi(argv[1]);
 		if (sigaction(SIGUSR1, &sa, NULL) == -1)
